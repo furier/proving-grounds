@@ -1,0 +1,5 @@
+name: proving-grounds
+runtime: nodejs
+description: a resource group with a single storage account
+config:
+  azure-native:location: westeurope
