@@ -1,0 +1,7 @@
+{
+  "name": "scripting",
+  "version": "1.0.0",
+  "devDependencies": {
+    "archiver": "^7.0.1"
+  }
+}
