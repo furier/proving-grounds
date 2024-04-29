@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
-  <body>
+  <body style="overflow: hidden; margin: 0;">
     <canvas id="canvas" style="width:100%; height:100%"></canvas>
     <button id="camera1" style="position: absolute; z-index: 1; top: 20px; left: 20px;">Camera 1</button>
     <button id="camera2" style="position: absolute; z-index: 1; top: 20px; left: 100px;">Camera 2</button>
     <button id="camera3" style="position: absolute; z-index: 1; top: 20px; left: 180px;">Camera 3</button>
+    <form id="searchForm">
+      <input id="searchInput" type="text" style="position: absolute; z-index: 1; top: 20px; left: 260px; width: 200px;" />
+      <button id="searchButton" type="submit" style="position: absolute; z-index: 1; top: 20px; left: 470px;">Search</button>
+    </form>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
