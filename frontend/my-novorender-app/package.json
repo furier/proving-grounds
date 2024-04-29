@@ -1,0 +1,20 @@
+{
+  "name": "my-novorender-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "postinstall": "node ./copy.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "@novorender/api": "^0.1.23",
+    "@novorender/data-js-api": "^0.2.26"
+  }
+}
