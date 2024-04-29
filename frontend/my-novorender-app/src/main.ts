@@ -1,7 +1,24 @@
-import { View, getDeviceProfile } from "@novorender/api";
+import { FlightController, View, getDeviceProfile } from "@novorender/api";
 import { createAPI, type SceneData } from "@novorender/data-js-api";
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
+
+function initializeButton(buttonId: string, flightController: FlightController) {
+  const camera = document.getElementById(buttonId) as HTMLButtonElement;
+  let cameraState: any = null;
+  camera.onclick = async (event) => {
+    if (event.shiftKey) {
+      // save camera position and rotation
+      cameraState = {
+        position: flightController.position,
+        rotation: flightController.rotation,
+      };
+    } else if (cameraState) {
+      // load camera position and rotation
+      flightController.moveTo(cameraState.position, 1000, cameraState.rotation);
+    }
+  };
+}
 
 async function main(canvas: HTMLCanvasElement) {
   const gpuTier = 2;
@@ -37,6 +54,10 @@ async function main(canvas: HTMLCanvasElement) {
   // });
 
   const flightController = await view.switchCameraController("flight");
+
+  initializeButton("camera1", flightController);
+  initializeButton("camera2", flightController);
+  initializeButton("camera3", flightController);
 
   // load the scene using URL gotten from `sceneData`
   const config = await view.loadScene(url, parentSceneId, "index.json");
