@@ -7,7 +7,7 @@ static class Zip
     {
         var seed = 123;
         var rnd = new Random(seed);
-        using (var archive = new ZipArchive(stream, ZipArchiveMode.Create))
+        using (var archive = new ZipArchive(stream, ZipArchiveMode.Create, true))
         {
             var buffer = new byte[0x100000];
             for (var i = 0; i < files; i++)
